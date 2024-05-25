@@ -1,8 +1,12 @@
 {
-    "footer": {
-      "address": "Adres: ul. Nowa 12, Łódź, 13-758",
-      "openingHours": "Godziny otwarcia: pn-nd, 11:00 - 23:00"
-    },
-    "languageSwitch": "Zmień język"
+  "footer": {
+    "address": "Adres: ul. Nowa 12, Łódź, 13-758",
+    "openingHours": "Godziny otwarcia: pn-nd, 11:00 - 23:00"
+  },
+  "languageSwitch": "Zmień język",
+  "products": {
+    "ingredients": "Składniki: ",
+    "size": "Rozmiar: "
   }
+}  
   

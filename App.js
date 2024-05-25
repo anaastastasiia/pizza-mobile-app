@@ -1,20 +1,36 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomePage from './app/pages/HomePage';
+import ProductPage from './app/pages/ProductPage';
+import MapPage from './app/pages/MapPage';
+import CartPage from './app/pages/CartPage';
+import Header from './app/components/Header';
+import Footer from './app/components/Footer';
+import { CartProvider } from './app/context/CartContext';
+import './i18n'; 
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text> Я Настя</Text>
-      <StatusBar style="auto" />
-    </View>
+    <CartProvider>
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: { backgroundColor: '#333' },
+            headerTintColor: '#fff',
+            headerTitleStyle: { fontWeight: 'bold' },
+            header: () => <Header />,
+          }}
+        >
+          <Stack.Screen name="Home" component={HomePage} />
+          <Stack.Screen name="Product" component={ProductPage} />
+          <Stack.Screen name="Map" component={MapPage} />
+          <Stack.Screen name="Cart" component={CartPage} />
+        </Stack.Navigator>
+      </NavigationContainer>
+      <Footer />
+    </CartProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

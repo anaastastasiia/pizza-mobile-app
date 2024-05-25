@@ -1,14 +1,23 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { useTranslation } from 'react-i18next';
+import { Text, Image, StyleSheet, ScrollView  } from 'react-native';
 
-const ProductScreen = ({ route }) => {
+const ProductPage = ({ route }) => {
+  const { t } = useTranslation();
   const { product } = route.params;
+
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <Image source={product.image} style={styles.image} />
       <Text style={styles.name}>{product.name}</Text>
+      <Text style={styles.description}>
+        {t('products.ingredients')}
+        {product.description}{'\n'}
+        {t('products.size')}
+        {product.size}
+      </Text>
       <Text style={styles.price}>{product.price}</Text>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -35,6 +44,11 @@ const styles = StyleSheet.create({
     height: 300,
     borderRadius: 10,
   },
+  description: {
+     color: '#aaa',
+    fontSize: 14,
+    marginBottom: 10,
+  },
 });
 
-export default ProductScreen;
+export default ProductPage;

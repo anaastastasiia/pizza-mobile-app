@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 
-const MapScreen = () => {
+const MapPage = () => {
   return (
     <View style={styles.container}>
       <MapView
@@ -35,4 +35,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MapScreen;
+export default MapPage;

@@ -1,8 +1,12 @@
 {
-    "footer": {
-      "address": "Address: 12 New Street, Lodz, 13-758",
-      "openingHours": "Opening Hours: Mon-Sun, 10:00 AM - 10:00 PM"
-    },
-    "languageSwitch": "Switch language"
+  "footer": {
+    "address": "Address: 12 New Street, Lodz, 13-758",
+    "openingHours": "Opening Hours: Mon-Sun, 11:00 AM - 11:00 PM"
+  },
+  "languageSwitch": "Switch language",
+  "products": {
+    "ingredients": "Ingredients: ",
+    "size": "Size: "
   }
+}
   
